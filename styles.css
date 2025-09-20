@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+  background: #f4f4f9;
+}
+
+/* Part 1: Button hover effects */
+#hoverBtn {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.5s, transform 0.3s;
+}
+
+#hoverBtn:hover {
+  background: #005bb5;
+  transform: scale(1.1);
+}
+
+/* Box that will animate */
+#box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  margin: 20px auto;
+  transition: transform 1s ease-in-out, background 0.5s;
+}
+
+/* CSS Animation with @keyframes */
+@keyframes spinAndGrow {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.5); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.animate {
+  animation: spinAndGrow 2s forwards;
+}
+
+/* Popup styling */
+#popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  background: white;
+  padding: 20px;
+  border: 2px solid #0073e6;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+#popup.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.hidden {
+  display: none;
+}
